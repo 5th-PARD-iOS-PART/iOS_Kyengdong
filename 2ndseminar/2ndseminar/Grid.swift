@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct Grid: View {
+    var item : GridModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Image(item.imageName)
+                .resizable()
+                .scaledToFit()
+                .frame(width:100,height: 100)
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+            Text(item.title)
+                .font(.system(size:14,weight:.bold))
+                .foregroundColor(.black)
+        }
+        
     }
-}
-
-#Preview {
-    Grid()
 }

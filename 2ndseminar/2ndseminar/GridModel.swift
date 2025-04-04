@@ -7,12 +7,16 @@
 
 import SwiftUI
 
-struct GridModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct GridModel:Identifiable {
+    let id = UUID()
+    let title: String
+    let imageName: String
 }
 
-#Preview {
-    GridModel()
+extension GridModel{
+    static let sample: [GridModel]=[
+        GridModel(title: "Apple", imageName: "photo1"),
+        GridModel(title: "Apple", imageName: "photo2"),
+        GridModel(title: "Apple", imageName: "photo3"),
+    ]
 }

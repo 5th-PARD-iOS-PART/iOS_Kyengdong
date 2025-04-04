@@ -7,12 +7,34 @@
 
 import SwiftUI
 
-struct work2: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+
+struct LogOn: View{
+    init(){
+        UITabBar.appearance().scrollEdgeAppearance = .init()
+    }
+    @State private var selction = 0
+    var body: some View{
+        TabView(selection:$selction){
+            FirstView()
+                .tabItem{
+                    Image(systemName:"arrow.up.circle")
+                    Text("😄1")
+                }
+                .tag(0)
+            SecondView()
+                .tabItem{
+                    Image(systemName:"house")
+                    Text("👓2")
+                }
+            .tag(1)
+            ThirdView()
+                .tabItem{
+                    Image(systemName:"flame.fill")
+                    Text("😍3")
+                }
+            .tag(2)
+        }
     }
 }
 
-#Preview {
-    work2()
-}
+

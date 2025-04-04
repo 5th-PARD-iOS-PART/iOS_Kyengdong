@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct GridView: View {
+    let columns = [GridItem(.flexible(),spacing: 20),GridItem(.flexible(),spacing: 20)]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            VStack{
+                Text("PARD")
+                ScrollView{
+                    LazyVGrid(columns: columns,spacing: 20){
+                        ForEach(GridModel.sample){ item in
+                            Grid(item:item)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+            }
+        }
+        .navigationTitle("Grid Example")
     }
 }
 
