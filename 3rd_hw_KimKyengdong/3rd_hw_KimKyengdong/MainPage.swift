@@ -8,29 +8,29 @@
 import SwiftUI
 
 struct MainPage: View {
+    
     var body: some View {
         VStack{
-            
+            top()
+                .frame(width:.infinity)
+                .background(Color("AccentColor"))
             List {
-                top()
-                    .frame(width:.infinity)
-                    .background(Color("AssetColor"))
                 Section{
                     top2()
+                }
+                Section{
+                    top3()
                 }
                 Section(){
                     ForEach(bank.banks,id:\.id){ item in
                         DemoRow(data: item)
+                            .listRowSeparator(.hidden)
                     }
                 }
-                Section(){
-                    
-                }
-                Section(){
-                    
-                }
             }
+            .background(Color("AccentColor"))
         }
+        .background(Color("AccentColor"))
     }
 }
 

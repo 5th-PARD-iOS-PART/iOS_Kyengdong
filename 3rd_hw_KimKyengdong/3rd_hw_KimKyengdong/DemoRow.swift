@@ -16,15 +16,20 @@ struct DemoRow: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width:34,height:34)
-                VStack{
+                    .padding(.vertical, 5)
+                    .padding(.trailing, 6)
+                VStack(alignment: .leading){
                     Text(data.sum)
                         .font(.system(size: 18.2))
                         .frame(alignment: .leading)
+                        .padding(.vertical, 1)
                     Text(data.name)
                         .font(.system(size: 14.3))
                         .frame(alignment: .leading)
+                        .padding(.vertical, 1)
                 }
                 Spacer()
+                
                 Image("SongGold")
                     .resizable()
                     .scaledToFit()

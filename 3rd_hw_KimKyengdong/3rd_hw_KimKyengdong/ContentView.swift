@@ -11,7 +11,9 @@ struct ContentView: View {
     init(){
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
-        UITabBar.appearance().scrollEdgeAppearance = .init()
+        
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+        UITabBar.appearance().standardAppearance = appearance
     }
     @State private var selection = 0
     
@@ -21,31 +23,31 @@ struct ContentView: View {
                 MainPage()
                     .tabItem{
                         Image(systemName:"house")
-                        Text("수정")
+                        Text("홈")
                     }
                     .tag(0)
                 GoodPage()
                     .tabItem{
-                        Image(systemName:"house")
-                        Text("수정")
+                        Image(systemName:"diamond")
+                        Text("혜택")
                     }
                     .tag(1)
                 ShopPage()
                     .tabItem{
-                        Image(systemName:"house")
-                        Text("수정")
+                        Image(systemName:"shop")
+                        Text("토스쇼핑")
                     }
                     .tag(2)
                 GrapePage()
                     .tabItem{
-                        Image(systemName:"house")
-                        Text("수정")
+                        Image(systemName:"increase")
+                        Text("증권")
                     }
                     .tag(3)
                 AllPage()
                     .tabItem{
-                        Image(systemName:"house")
-                        Text("수정")
+                        Image(systemName:"menu")
+                        Text("전체")
                     }
                     .tag(4)
             }
