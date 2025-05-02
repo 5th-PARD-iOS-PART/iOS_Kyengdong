@@ -18,7 +18,7 @@ final class ShopData : ShopDataRepository {
         let images: [String] = ["hat1", "hat2", "buds", "fruittella", "hairband", "haribo","minifan", "mylanch", "snack", "suncream", "tommy"]
         let prices: [Int] = [123,1234,1543,235,2634,3254,23462,3253,2153,1435,1235]
         let categorys:[String] = ["의류","의류","전자제품","식품","의류","식품","전자제품","식품","식품","뷰티","뷰티"]
-        let specials: [Bool] = [true,true,true,true,true,true,true,true,true,true,true]
+        let specials: [Bool] = [true,false,true,true,false,false,false,true,false,false,true]
         let infos:[String] = ["hat1", "hat2", "buds", "fruittella", "hairband", "haribo","minifan", "mylanch", "snack", "suncream", "tommy"]
         
         var newItemList: [Item] = []

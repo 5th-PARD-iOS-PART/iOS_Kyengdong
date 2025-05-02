@@ -22,7 +22,7 @@ struct _th_hw_KimKyengdongApp: App {
         let viewModel = ShopViewModel(getItemListUsecase:getItemListUsecaseImpl)
         
         WindowGroup {
-            ContentView()
+            ContentView(shopViewModel: viewModel)
         }
     }
 }

@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Bindable private var shopViewModel: ShopViewModel
+    
+    init(shopViewModel: ShopViewModel) {
+        self.shopViewModel = shopViewModel
+    }
+    
     
     var body: some View {
         TabView(){
@@ -23,12 +29,12 @@ struct ContentView: View {
 //                  Text("혜택")
 //                }
 //          .tag(1)
-//            ShopPage(shopViewModel: viewModel)
-//                .tabItem{
-//                    Image(systemName:"bag")
-//                    Text("토스쇼핑")
-//                }
-//                .tag(2)
+            ShopPage(shopViewModel: shopViewModel)
+                .tabItem{
+                    Image(systemName:"bag")
+                    Text("토스쇼핑")
+                }
+                .tag(2)
             //                GrapePage()
             //                  .tabItem{
             //                    Image(systemName:"increase")
@@ -47,6 +53,16 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    
+    // repository
+    let repository = ShopData()
+    
+    // useCase
+    let getItemListUsecaseImpl = GetItemListUsecaseImpl(repository: repository)
+    
+    //ViewModel
+    let viewModel = ShopViewModel(getItemListUsecase:getItemListUsecaseImpl)
+    
+    ContentView(shopViewModel: viewModel)
 }
 
